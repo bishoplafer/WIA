@@ -115,8 +115,40 @@ Height and width and color are up to you.
 
 ********************************************/
 
-
+	
 //Draw Star here
+
+	var theCanvas3 = document.getElementById("Canvas3");
+	var ctx3 = theCanvas3.getContext('2d');
+
+	var length = 20;
+
+	ctx3.beginPath();
+	ctx3.translate(100, 100);
+
+	// initial offset rotation so our star is straight
+	ctx3.rotate((Math.PI * 1 / 10));
+
+	// make a point, 5 times
+	for (var i = 5; i--;) {
+	    // draw line up
+	    ctx3.lineTo(0, length);
+	    // move origin to current same location as pen
+	    ctx3.translate(0, length);
+	    // rotate the drawing board
+	    ctx3.rotate((Math.PI * 2 / 10));
+	    // draw line down
+	    ctx3.lineTo(0, -length);
+	    // again, move origin to pen...
+	    ctx3.translate(0, -length);
+	    // ...and rotate, ready for next arm
+	    ctx3.rotate(-(Math.PI * 6 / 10));
+	};
+	// last line to connect things up
+	ctx3.lineTo(0, length);
+	ctx3.closePath();
+	// stroke the path, you could also .fill()
+	ctx3.stroke();
 
 
 /*******************************************
