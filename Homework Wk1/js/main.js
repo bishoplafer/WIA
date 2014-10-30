@@ -165,6 +165,31 @@ Do not overlap any other object.
 
 //Draw Umbrella top here
 
+	var theCanvas4 = document.getElementById("Canvas4");
+	var ctx4 = theCanvas4.getContext('2d');
+
+
+	var x = theCanvas4.width / 2;
+	var y = theCanvas4.height / 2;
+	var radius = 125;
+	var startAngle = 1.1 * Math.PI;
+	var endAngle = 1.9 * Math.PI;
+	var counterClockwise = false;
+
+	ctx4.beginPath();
+	ctx4.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+	ctx4.lineWidth = 5;
+
+	// line color
+	ctx4.strokeStyle = 'black';
+	ctx4.stroke();
+
+
+	//bezierCurveTo(cx1, cy1, cx2, cy2, x, y )
+	ctx4.arc(x+25, y, startAngle, endAngle, counterClockwise);
+				
+	ctx4.stroke();
+
 /*******************************************
 PART 5
 
@@ -174,6 +199,21 @@ Draw text into your canvas.  It can said whatever you would like in any color.
 ********************************************/
 
 //Draw text here
+
+	var theCanvas5 = document.getElementById("Canvas5");
+	var ctx5 = theCanvas5.getContext('2d');
+
+	var theString = "Drawing Text on a Canvas";
+
+	//Stroke and Fill Text
+	ctx5.font="24pt Verdana";
+	ctx5.fillStyle = "yellow";
+	//ctx.textBaseline= "middle";
+	ctx5.strokeStyle = "rgba(0, 255, 0, .5)";
+	ctx5.fillText(theString, 20, 160);
+	ctx5.strokeText(theString, 20, 160);
+
+
 
 /*******************************************
 PART 6
@@ -190,6 +230,16 @@ Reminder to use the drawImage method for all 3 of the ways.
 
 //Draw images here
 
+	var theCanvas6 = document.getElementById("Canvas6");
+	var ctx6 = theCanvas6.getContext('2d');
+
+	var  srcImg = document.getElementById("img1");
+
+	ctx6.drawImage(srcImg, 0,0);
+
+	ctx6.drawImage(srcImg, 0, 0, 1650, 544);
+
+	ctx6.drawImage(srcImg, 285, 40, 95, 140, 0, 0, 825, 273);
 
 
 /*******************************************
