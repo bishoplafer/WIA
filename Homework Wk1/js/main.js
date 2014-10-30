@@ -13,6 +13,30 @@ HTML5 Shape Drawing Activity
      
 ********************************************/
 
+//Load different scripts based on our tests
+//Modernizr.load
+
+Modernizr.load({
+	test: Modernizr.canvas,
+	yep: "js/main.js",
+	nope: "js/fail.js",
+	complete: function(){
+		//This will run after the js file is loaded based on the case
+		
+		console.log("The test is complete");
+		
+		
+		
+		
+		}
+	
+	
+	
+	
+	});
+
+	console.log(Modernizr);
+
 /*******************************************
 FILE SETUP
 
@@ -21,7 +45,6 @@ FILE SETUP
 // Link the main.js file
 // Setup the call to that canvas and get it's 2d context
 //Use Modernizr to verify that your browser supports canvas, include a fallback message
-
 
 /*******************************************
 PART 1
@@ -35,6 +58,17 @@ Reminder - set the style first then draw.
 ********************************************/
 
 //Draw Rectangle here
+
+window.onload = function(){
+	var theCanvas1 = document.getElementById("Canvas1");
+	var ctx1 = theCanvas1.getContext('2d');
+	
+	ctx1.fillStyle = "blue";
+	ctx1.strokeStyle = "black";
+	ctx1.lineWidth = 5;
+
+	ctx1.strokeRect(0, 0, 50, 100);
+	ctx1.fillRect(0, 0, 50, 100);
 
 
 /*******************************************
@@ -52,6 +86,21 @@ Use the arc method
 
 //Draw Circle here
 
+	var theCanvas2 = document.getElementById("Canvas2");
+	var ctx2 = theCanvas2.getContext('2d');
+	
+	ctx2.fillStyle = "red";
+	ctx2.strokeStyle = "black";
+	ctx2.lineWidth = 5;
+
+	//Full Circle
+	var degrees = 360;
+	var radians = (degrees/180)*Math.PI;
+	
+	ctx2.beginPath();
+	ctx2.arc(50, 50, 20, 0, radians);
+	ctx2.fill();
+	ctx2.stroke();
 
 
 
@@ -125,3 +174,4 @@ You must use at least 3 different methods.
 // Draw scene here
 
 
+};
