@@ -1,7 +1,7 @@
 /*
-     Name:
-     Date:
-     Class & Section:  WIA-####
+     Name: Bishop Lafer
+     Date: 10/30/14
+     Class & Section:  WIA-C201411
      Comments: "HTML5 Canvas Drawing"
  */
 
