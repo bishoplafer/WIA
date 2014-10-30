@@ -208,7 +208,6 @@ Draw text into your canvas.  It can said whatever you would like in any color.
 	//Stroke and Fill Text
 	ctx5.font="24pt Verdana";
 	ctx5.fillStyle = "yellow";
-	//ctx.textBaseline= "middle";
 	ctx5.strokeStyle = "rgba(0, 255, 0, .5)";
 	ctx5.fillText(theString, 20, 160);
 	ctx5.strokeText(theString, 20, 160);
@@ -255,5 +254,58 @@ You must use at least 3 different methods.
 
 // Draw scene here
 
+	var theCanvas7 = document.getElementById("Canvas7");
+	var ctx7 = theCanvas7.getContext('2d');
+	
+	var x = theCanvas7.width / 2;
+	var y = theCanvas7.height / 2;
+	var radius = 125;
+	var startAngle = 1.1 * Math.PI;
+	var endAngle = 1.9 * Math.PI;
+	var counterClockwise = false;
+
+	ctx7.beginPath();
+	ctx7.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+	ctx7.lineWidth = 5;
+
+	// line color
+	ctx7.strokeStyle = 'black';
+	ctx7.stroke();
+
+	var length = 30;
+
+	ctx7.beginPath();
+	ctx7.translate(x-20, y-20);
+
+	// initial offset rotation so our star is straight
+	ctx7.rotate((Math.PI * 1 / 10));
+
+	// make a point, 5 times
+	for (var i = 5; i--;) {
+	    // draw line up
+	    ctx7.lineTo(0, length);
+	    // move origin to current same location as pen
+	    ctx7.translate(0, length);
+	    // rotate the drawing board
+	    ctx7.rotate((Math.PI * 2 / 10));
+	    // draw line down
+	    ctx7.lineTo(0, -length);
+	    // again, move origin to pen...
+	    ctx7.translate(0, -length);
+	    // ...and rotate, ready for next arm
+	    ctx7.rotate(-(Math.PI * 6 / 10));
+	};
+	// last line to connect things up
+	ctx7.lineTo(0, length);
+	ctx7.closePath();
+	// stroke the path, you could also .fill()
+	ctx7.stroke();
+
+	var newString = "Complex Scene";
+
+	ctx7.beginPath();
+	ctx7.fill = "green";
+	ctx7.font="24pt Verdana";
+	ctx7.fillText(newString, -90, 0);
 
 };
