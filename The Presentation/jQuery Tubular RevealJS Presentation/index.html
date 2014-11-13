@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>jQuery Tubular</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>jQuery Tubular</h1>
+					<p><small>By Sean McCambridge | <a href="seanmccambridge.com/tubular">seanmccambridge.com/tubular</a></small></p>
+				</section>
+
+				<section>
+					<p>Allows developers to use a YouTube video as the page background.</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section data-background="#007777">
+					<section>
+						<h2>The HTML</h2>
+						<pre><code data-trim contenteditable>
+<div id="wrapper" class="container">
+    <p id="video-controls">
+    	Video controls:
+	    <br />
+	    <a href="#" class="tubular-play">Play</a> | 
+	    <a href="#" class="tubular-pause">Pause</a> | 
+	    <a href="#" class="tubular-volume-up">Volume Up</a> | 
+	    <a href="#" class="tubular-volume-down">Volume Down</a> | 
+	    <a href="#" class="tubular-mute">Mute</a>
+    </p>
+</div>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.tubular.1.0.js"></script>
+<script src="js/custom.js"></script>
+					</code></pre>
+					</section>
+					<section>
+						<h2>The JavaScript</h2>
+						<pre><code data-trim contenteditable>
+$(document).ready(function() {
+                $('#wrapper').tubular({videoId: 'idOfYourVideo'});
+        });
+						</code></pre>
+					</section>
+				</section>
+
+				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+					<h2>A few things to consider</h2>
+					<ol>
+						<li class="fragment">Better suited for a Desktop Site.</li>
+						<li class="fragment">If your YouTube Video has advertisements they can be distracting.</li>
+						<li class="fragment">In your design use CSS3 Transparency to allow for the background to be seen behind the page content.</li>
+					</ol>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<h3>BY Bishop Lafer</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/jquery.tubular.1.0.js"></script>
+		<script src="js/custom.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
