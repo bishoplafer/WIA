@@ -1,0 +1,52 @@
+/* this is a custom css stylesheet */
+body {
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 1em;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+footer {
+	padding: 2em 0;
+	margin: 3em 0;
+	border-top: 1px solid #ddd;
+	color: #999;
+	text-align: center;
+}
+
+div#socialmedia {
+	display: inline;
+}
+
+h1 {
+	color: red;
+}
+
+
+/* Media Querries
+---------------------------------------------------------*/
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media screen and (min-width: 768px) and (max-width: 959px) {
+
+
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devives and browsers) */
+	@media screen and (min-width: 480px) and (max-width: 767px) {
+		body {
+			font-family: 'Droid Sans', sans-serif;
+			background-color: #000000;
+			color: #ffffff;
+		}
+
+		#logoLT {
+			display: hidden;
+		}
+
+	}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media screen and (max-width: 479px) {
+
+	}
